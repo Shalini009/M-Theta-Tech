@@ -9,7 +9,9 @@ public class Scenario {
 
 	WebDriver driver;
 	driver.manage().window().maximize();
-
+	if ("Certificate Error: Navigation Blocked".equalsIgnoreCase(driver.getTitle())) {
+			driver.get("javascript:document.getElementById('overridelink').click();");
+		}
 
 	@Test
 	public void openApp() {
